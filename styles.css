@@ -140,3 +140,18 @@ body{background:linear-gradient(180deg,#fbfaf6 0%,var(--premium-cream) 100%);col
  .photo-cat{min-height:165px}
  .premium-card .foodimg{height:190px}
 }
+
+/* ===== V2.2 Photography Edition finishing pass ===== */
+.topbar{
+  background:rgba(255,254,250,.96)!important;
+  color:#173b29!important;
+  border-bottom:1px solid rgba(23,91,58,.14)!important;
+}
+body.dark .topbar{background:rgba(19,29,22,.96)!important;color:#f5f4ef!important}
+.brand strong{color:#1b6a43!important;text-shadow:none}
+.brand span{color:inherit;opacity:.9}
+.photo-cat img{filter:saturate(1.05) contrast(1.02)}
+.photo-cat .cat-shade{background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.74))}
+.card .foodimg,.herofood{background:#ecebe5}
+.card{transition:transform .18s ease, box-shadow .18s ease}
+.card:active{transform:scale(.992)}

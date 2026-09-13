@@ -1,17 +1,20 @@
-# Dockrells Healthy Eating — V2.2 Visual Upgrade
+# Dockrells Healthy Eating — V2.2 Photography Edition
 
-Upload the CONTENTS of this folder to the root of your existing GitHub repository.
+GitHub-ready full replacement package.
 
-V2.2 includes:
-- image-led Home category cards matching the premium mockup direction
-- premium hero branding
-- richer recipe cards with favourites controls
-- recipe Overview tab and Start Cooking entry point
-- existing 81 recipe images wired across Home, recipe lists and recipe details
-- favourites, search, planner, shopping list, serving scaling and cooking mode retained
-- new cache key so GitHub Pages/iPhone refreshes the visual update
+## Upload
+1. Unzip this file.
+2. Upload the CONTENTS to the root of your existing `Dockrells-Healthy-Eating` repository.
+3. Commit to `main`.
+4. Keep GitHub Pages on `main` → `/(root)`.
 
-Keep GitHub Pages on main / (root).
+## Includes
+- premium image-led Home screen
+- 9 dedicated category cover images in `assets/covers/`
+- 81 recipe images standardized to 1280×720 for cleaner mobile display
+- improved image crops/contrast
+- corrected header contrast
+- recipe overview, favourites, search, planner, shopping list, serving scaling and cooking mode
+- refreshed PWA cache for deployment
 
-Photography note:
-The V2.2 code is fully prepared for one-for-one image replacement at assets/recipes/v1r1.jpg through v9r9.jpg. Replacing those files needs no code changes.
+Existing saved favourites/planner data remain in the browser.
