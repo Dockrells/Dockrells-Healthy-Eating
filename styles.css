@@ -38,3 +38,17 @@ body.dark .bottomnav{background:rgba(24,32,24,.96)}.bottomnav button{border:0;ba
 .empty{text-align:center;padding:40px 15px;color:var(--muted)}
 .servings{display:flex;gap:8px;align-items:center}.servings button{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--text)}
 @media(min-width:760px){.catgrid{grid-template-columns:repeat(3,1fr)}.hero{padding:34px}.hero h1{font-size:50px}}
+
+.foodimg{width:100%;height:155px;object-fit:cover;display:block}
+.herofood{width:100%;height:230px;object-fit:cover;border-radius:24px 24px 0 0;display:block}
+.overlayhead{border-radius:0 0 24px 24px;margin-top:0}
+.greenbtn{background:var(--green)!important;color:white!important;margin-top:12px}
+.cookmode{min-height:70vh;display:flex;flex-direction:column;justify-content:center}
+.cookprogress{text-align:center;color:var(--muted);font-weight:700;margin-bottom:10px}
+.cookimg{width:100%;max-height:280px;object-fit:cover;border-radius:22px}
+.cookmode h1{text-align:center;margin:18px 0 8px}
+.cookstep{font-size:26px;line-height:1.35;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--shadow)}
+.cookcontrols{display:flex;justify-content:space-between;gap:12px;margin-top:16px}
+.darktext{color:var(--text);background:var(--card);border:1px solid var(--line)}
+.mini-plan{display:flex;align-items:center;gap:8px}.mini-plan img{width:44px;height:44px;border-radius:10px;object-fit:cover}
+@media(min-width:760px){.foodimg{height:180px}.herofood{height:360px}}
