@@ -1,27 +1,39 @@
-# Dockrells Healthy Eating — Version 2
+# Dockrells Healthy Eating — V2.1 Premium
 
-Version 2 upgrades:
-- 81 food-photo recipe cards and recipe headers
-- visual recipe picker in Meal Planner
-- automatic ingredient scaling when servings change
-- consolidated shopping list for compatible ingredient quantities
-- full-screen cooking mode with previous/next steps
-- improved offline cache
-- app icons stored in the correct `/assets` folder
-- retains search, filters, favourites, dark mode and random meal picker
+GitHub-ready full replacement package.
 
-## Update your existing GitHub site
-1. Open your `Dockrells-Healthy-Eating` repository.
-2. Upload the contents of this ZIP to the repository root.
-3. Choose **Commit changes** to the `main` branch.
-4. IMPORTANT: upload the `assets` folder as a folder, including:
-   - assets/icon-192.png
-   - assets/icon-512.png
-   - assets/recipes/ (81 JPG images)
-5. GitHub Pages should redeploy automatically.
-6. Open your site and refresh. If the old app persists, fully close Safari and reopen it once; the V2 service worker clears the V1 cache.
+## Included
+- all 81 recipes
+- all 81 current recipe image files
+- premium visual redesign
+- recipe hero images
+- serving-size scaling
+- cooking mode
+- favourites
+- visual weekly planner
+- consolidated shopping list
+- search and filters
+- dark mode
+- PWA/offline support
+- corrected assets/icon structure
+- refreshed V2.1 cache
 
-Your existing GitHub Pages settings can remain on:
-- Source: Deploy from a branch
-- Branch: main
-- Folder: /(root)
+## Upload
+Upload the CONTENTS of this package to the root of the existing
+Dockrells-Healthy-Eating repository and commit to `main`.
+
+Keep GitHub Pages set to:
+- Deploy from a branch
+- main
+- /(root)
+
+The assets folder must remain:
+assets/
+  icon-192.png
+  icon-512.png
+  recipes/
+    v1r1.jpg ... v9r9.jpg
+
+Note: this package contains the complete working V2.1 app. The 81 image slots are
+all present and can be replaced one-for-one later with newly generated standalone
+high-resolution photography without any code changes.

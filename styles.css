@@ -52,3 +52,55 @@ body.dark .bottomnav{background:rgba(24,32,24,.96)}.bottomnav button{border:0;ba
 .darktext{color:var(--text);background:var(--card);border:1px solid var(--line)}
 .mini-plan{display:flex;align-items:center;gap:8px}.mini-plan img{width:44px;height:44px;border-radius:10px;object-fit:cover}
 @media(min-width:760px){.foodimg{height:180px}.herofood{height:360px}}
+
+/* ===== Dockrells V2.1 Premium visual layer ===== */
+:root{
+  --premium-cream:#f7f4ec;
+  --premium-ink:#142018;
+  --premium-green:#175b3a;
+  --premium-gold:#b89455;
+  --premium-card:#fffefa;
+}
+body{background:linear-gradient(180deg,#fbfaf6 0%,var(--premium-cream) 100%);color:var(--premium-ink)}
+.topbar{
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  background:rgba(255,254,250,.9);border-bottom:1px solid rgba(23,91,58,.12)
+}
+.brand strong{font-family:Georgia,serif;font-style:italic;font-size:30px;color:var(--premium-green)}
+.brand span{letter-spacing:.24em;font-size:10px;font-weight:800}
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#164f34,#2e8a57 72%,#64a36f);
+  border-radius:30px;padding:34px 28px;box-shadow:0 18px 45px rgba(25,67,45,.18)
+}
+.hero:after{content:"";position:absolute;width:210px;height:210px;border-radius:50%;right:-70px;bottom:-100px;background:rgba(255,255,255,.10)}
+.hero h1{font-family:Georgia,serif;font-style:italic;font-size:42px;line-height:1.02;letter-spacing:-.025em}
+.hero p{font-size:16px;opacity:.94}
+.cat{min-height:180px;border-radius:26px;padding:22px;box-shadow:0 12px 28px rgba(28,45,34,.12);transition:.2s transform}
+.cat:active{transform:scale(.98)}
+.cat b{font-family:Georgia,serif;font-size:27px;line-height:1.05}
+.cards{gap:20px}
+.card{overflow:hidden;border-radius:24px;background:var(--premium-card);border:1px solid rgba(30,55,39,.08);box-shadow:0 12px 30px rgba(24,43,31,.10)}
+.foodimg{height:205px;transition:transform .3s ease}
+.card:active .foodimg{transform:scale(1.02)}
+.card .body{padding:16px 18px 18px}
+.card h3{font-family:Georgia,serif;font-size:23px;line-height:1.08;margin-bottom:10px}
+.kcal{background:#eaf4ec;color:#175b3a;padding:5px 9px;border-radius:999px;font-weight:800}
+.herofood{height:310px;border-radius:28px 28px 0 0}
+.recipe-head.overlayhead{padding:25px 22px 24px;box-shadow:0 12px 28px rgba(24,43,31,.12)}
+.recipe-head h1{font-family:Georgia,serif;font-size:34px;line-height:1.06}
+.tabs{position:sticky;top:67px;z-index:4;background:rgba(247,244,236,.92);backdrop-filter:blur(12px);padding-top:8px}
+.tabs button{border-radius:999px}
+.panel{border-radius:22px;background:rgba(255,254,250,.96);box-shadow:0 8px 24px rgba(24,43,31,.07)}
+.step i{background:var(--premium-green);color:white}
+.cookmode{background:linear-gradient(180deg,#f9f7f1,#efeadf);border-radius:28px;padding:18px}
+.cookstep{font-family:Georgia,serif}
+.plan-row{padding:11px 0;border-bottom:1px solid rgba(30,55,39,.08)}
+.bottomnav{background:rgba(255,254,250,.94);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-top:1px solid rgba(23,91,58,.10)}
+.bottomnav button.active{color:var(--premium-green)}
+@media(min-width:760px){
+  main{max-width:1080px;margin:auto}
+  .cards{grid-template-columns:repeat(3,1fr)}
+  .foodimg{height:190px}
+  .herofood{height:480px}
+}

@@ -1,11 +1,11 @@
 {
-  "name": "Dockrells Healthy Eating V2",
+  "name": "Dockrells Healthy Eating",
   "short_name": "Dockrells",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#f5f7f3",
   "theme_color": "#1e6837",
-  "description": "Family recipes, favourites, shopping lists and weekly meal planning.",
+  "description": "Healthy family recipes, meal planning and shopping.",
   "icons": [
     {
       "src": "assets/icon-192.png",
