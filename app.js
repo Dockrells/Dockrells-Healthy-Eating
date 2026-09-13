@@ -49,16 +49,16 @@ function normalizeShopItem(text){
 }
 function card(r){
  const c=category(r.volume);
- return `<article class="card" onclick="openRecipe('${r.id}')">
-   <img class="foodimg" src="${r.image}" alt="${escapeHtml(r.name)}" loading="lazy">
-   <div class="body"><h3>${escapeHtml(r.name)}</h3><div class="meta"><span class="kcal">${r.calories} kcal</span><span>⏱ ${r.prep+r.cook} mins</span><span>${c.title}</span></div></div>
+ return `<article class="card premium-card" onclick="openRecipe('${r.id}')">
+   <div class="photo-wrap"><img class="foodimg" src="${r.image}" alt="${escapeHtml(r.name)}" loading="lazy"><button class="card-heart" onclick="event.stopPropagation();toggleFav('${r.id}')">${favs.includes(r.id)?"♥":"♡"}</button></div>
+   <div class="body"><h3>${escapeHtml(r.name)}</h3><div class="meta"><span class="kcal">${r.calories} kcal</span><span>◷ ${r.prep+r.cook} mins</span><span>${c.title}</span></div></div>
  </article>`;
 }
 function home(){
- return `<section class="hero"><h1>Dockrells Healthy Eating</h1><p>Good food. Happier families. Brighter days.</p>
+ return `<section class="hero visual-hero"><div class="hero-kicker">DOCKRELLS HEALTHY EATING</div><h1>Good Food.<br>Brighter Days.</h1><p>81 family-friendly recipes for real life.</p>
  <div class="actions"><button class="primary" onclick="randomRecipe()">🎲 What shall we have?</button><button class="secondary" onclick="go('search')">Search recipes</button></div></section>
  <div class="section-title"><h2>Recipe volumes</h2><small>${DATA.recipes.length} recipes</small></div>
- <section class="catgrid">${DATA.categories.map(c=>`<button class="cat" style="background:${c.color}" onclick="openVolume(${c.id})"><div class="num">Volume ${c.id}</div><b>${c.title}</b><span>${c.target}</span></button>`).join("")}</section>
+ <section class="catgrid photo-catgrid">${DATA.categories.map(c=>`<button class="cat photo-cat" onclick="openVolume(${c.id})"><img src="${c.cover}" alt="${escapeHtml(c.title)}"><span class="cat-shade"></span><span class="cat-copy"><small>Volume ${c.id}</small><b>${c.title}</b><em>${c.target}</em></span></button>`).join("")}</section>
  <div class="section-title"><h2>Quick picks</h2><small>Tap to open</small></div>
  <section class="cards">${DATA.recipes.slice(0,6).map(card).join("")}</section>`;
 }
@@ -69,7 +69,9 @@ function volumeView(){
 function recipeView(){
  const r=recipe(state.recipe),c=category(r.volume),isFav=favs.includes(r.id),scale=state.serves/r.serves;
  let body="";
- if(state.tab==="ingredients"){
+ if(state.tab==="overview"){
+   body=`<div class="panel overview-panel"><h3>${escapeHtml(r.name)}</h3><p>A simple, family-friendly recipe designed to fit the Dockrells Healthy Eating calorie guide.</p><div class="overview-grid"><span><b>${r.calories}</b><small>kcal</small></span><span><b>${r.prep}</b><small>prep mins</small></span><span><b>${r.cook}</b><small>cook mins</small></span><span><b>${state.serves}</b><small>servings</small></span></div><button class="primary greenbtn" onclick="startCooking('${r.id}')">▶ Start Cooking</button></div>`;
+ } else if(state.tab==="ingredients"){
    body=`<div class="panel"><div class="servings"><b>Servings</b><button onclick="changeServes(-1)">−</button><strong>${state.serves}</strong><button onclick="changeServes(1)">+</button></div>
    <ul class="checklist">${r.ingredients.map(i=>`<li><span>•</span><span>${escapeHtml(scaleIngredient(i,r.serves,state.serves))}</span></li>`).join("")}</ul>
    <button class="primary greenbtn" onclick="addAllIngredients('${r.id}')">🛒 Add scaled ingredients</button></div>`;
@@ -83,7 +85,7 @@ function recipeView(){
  <section class="recipe-head overlayhead" style="background:${c.color}">
  <div style="display:flex;justify-content:space-between;gap:12px;align-items:start"><div><small>Volume ${c.id} • ${c.title}</small><h1>${escapeHtml(r.name)}</h1></div><button class="smallbtn" onclick="toggleFav('${r.id}')">${isFav?"♥":"♡"}</button></div>
  <div class="big-kcal">${r.calories} kcal</div><div class="meta" style="color:white"><span>👨‍👩‍👧‍👦 ${state.serves} servings</span><span>⏱ Prep ${r.prep}m</span><span>🍳 Cook ${r.cook}m</span></div></section>
- <div class="tabs"><button class="${state.tab==="ingredients"?"active":""}" onclick="setTab('ingredients')">Ingredients</button><button class="${state.tab==="method"?"active":""}" onclick="setTab('method')">Method</button><button class="${state.tab==="equipment"?"active":""}" onclick="setTab('equipment')">Equipment</button></div>${body}`;
+ <div class="tabs"><button class="${state.tab==="overview"?"active":""}" onclick="setTab('overview')">Overview</button><button class="${state.tab==="ingredients"?"active":""}" onclick="setTab('ingredients')">Ingredients</button><button class="${state.tab==="method"?"active":""}" onclick="setTab('method')">Method</button><button class="${state.tab==="equipment"?"active":""}" onclick="setTab('equipment')">Equipment</button></div>${body}`;
 }
 function cookingView(){
  const r=recipe(state.recipe),i=Math.min(state.cookStep,r.method.length-1);
@@ -121,7 +123,7 @@ function render(){
 }
 window.go=go;
 window.openVolume=v=>go("volume",{volume:v});
-window.openRecipe=id=>go("recipe",{recipe:id,tab:"ingredients",serves:recipe(id).serves});
+window.openRecipe=id=>go("recipe",{recipe:id,tab:"overview",serves:recipe(id).serves});
 window.setTab=t=>{state.tab=t;render()};
 window.changeServes=d=>{state.serves=Math.max(1,Math.min(12,state.serves+d));render()};
 window.toggleFav=id=>{favs=favs.includes(id)?favs.filter(x=>x!==id):[...favs,id];set(LS.fav,favs);render()};

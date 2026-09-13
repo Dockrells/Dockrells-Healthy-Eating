@@ -4,55 +4,64 @@ window.APP_DATA = {
       "id": 1,
       "title": "Family Favourites",
       "target": "500\u2013600 kcal",
-      "color": "#2f7d4a"
+      "color": "#2f7d4a",
+      "cover": "assets/recipes/v1r1.jpg"
     },
     {
       "id": 2,
       "title": "Easy Weeknights",
       "target": "500\u2013600 kcal",
-      "color": "#2d6ea3"
+      "color": "#2d6ea3",
+      "cover": "assets/recipes/v2r1.jpg"
     },
     {
       "id": 3,
       "title": "Family Comfort",
       "target": "500\u2013600 kcal",
-      "color": "#a84234"
+      "color": "#a84234",
+      "cover": "assets/recipes/v3r1.jpg"
     },
     {
       "id": 4,
       "title": "Fakeaway",
       "target": "500\u2013600 kcal",
-      "color": "#159aa0"
+      "color": "#159aa0",
+      "cover": "assets/recipes/v4r1.jpg"
     },
     {
       "id": 5,
       "title": "Slowcooker",
       "target": "500\u2013600 kcal",
-      "color": "#7656a8"
+      "color": "#7656a8",
+      "cover": "assets/recipes/v5r1.jpg"
     },
     {
       "id": 6,
       "title": "Breakfast & Brunch",
       "target": "500\u2013600 kcal",
-      "color": "#e3b62d"
+      "color": "#e3b62d",
+      "cover": "assets/recipes/v6r1.jpg"
     },
     {
       "id": 7,
       "title": "Easy Lunch",
       "target": "Under 400 kcal",
-      "color": "#4b9147"
+      "color": "#4b9147",
+      "cover": "assets/recipes/v7r1.jpg"
     },
     {
       "id": 8,
       "title": "Bitesize Snacks",
       "target": "Under 75 kcal",
-      "color": "#dc6b9e"
+      "color": "#dc6b9e",
+      "cover": "assets/recipes/v8r1.jpg"
     },
     {
       "id": 9,
       "title": "Desserts",
       "target": "Under 200 kcal",
-      "color": "#8574bd"
+      "color": "#8574bd",
+      "cover": "assets/recipes/v9r1.jpg"
     }
   ],
   "recipes": [
